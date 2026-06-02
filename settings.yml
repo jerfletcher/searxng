@@ -1,0 +1,131 @@
+use_default_settings: true
+
+general:
+  instance_name: "SearXNG"
+  debug: false
+  privacypolicy_url: false
+  donation_url: false
+  enable_metrics: true
+
+search:
+  safesearch: 0
+  autocomplete: "duckduckgo"
+  default_lang: "en-US"
+  formats:
+    - html
+    - json
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "searxng-secret-key-change-me"
+  limiter: true
+  image_proxy: false
+
+ui:
+  default_theme: simple
+  default_locale: all
+  infinite_scroll: false
+  center_alignment: true
+  query_in_title: true
+
+engines:
+  # Disable engines that require API keys or have strict rate limits
+  - name: duckduckgo
+    engine: duckduckgo
+    disabled: false
+    weight: 3
+
+  - name: duckduckgo images
+    engine: duckduckgo_images
+    disabled: false
+
+  - name: wikipedia
+    engine: wikipedia
+    disabled: false
+    weight: 2
+    use_infobox: true
+
+  - name: wikinews
+    engine: wikinews
+    disabled: false
+
+  - name: brave
+    engine: brave
+    disabled: false
+    weight: 2
+
+  - name: startpage
+    engine: startpage
+    disabled: false
+    weight: 2
+
+  - name: google
+    engine: google
+    disabled: false
+    weight: 1
+
+  - name: mozilladocs
+    engine: mozilladocs
+    disabled: false
+
+  - name: stackoverflow
+    engine: stackoverflow
+    disabled: false
+    weight: 2
+
+  - name: github
+    engine: github
+    disabled: false
+
+  - name: github suggestions
+    engine: github_suggestions
+    disabled: false
+
+  - name: medium
+    engine: medium
+    disabled: false
+
+  - name: reddit
+    engine: redditsearch
+    disabled: false
+
+  - name: hackernews
+    engine: hackernews
+    disabled: false
+
+  - name: archive org
+    engine: archive
+    disabled: false
+
+  - name: 9gag
+    engine: 9gag
+    disabled: true
+
+  - name: quora
+    engine: quora
+    disabled: true
+
+  # News
+  - name: google news
+    engine: google_news
+    disabled: false
+
+  - name: hackernews
+    engine: hackernews
+    disabled: false
+
+  # Disable key-required engines
+  - name: wikipedia
+    engine: wikipedia
+    disabled: false
+
+categories:
+  general:
+    suggested_categories: []
+  images:
+    suggested_categories: []
+  news:
+    suggested_categories: []
+  videos:
+    suggested_categories: []

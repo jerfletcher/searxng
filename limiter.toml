@@ -1,0 +1,14 @@
+[botdetection]
+# Disable rate limiting for self-hosted instance
+# Adjust if you expose to the internet
+
+[botdetection.ip_limit]
+# Allow more requests per minute
+activation_interval = 300
+# No limit
+limit = 0
+
+[botdetection.ip_lists]
+# No IP blacklisting
+blacklisted = []
+whitelisted = []
