@@ -3,7 +3,7 @@ services:
   searxng:
     image: searxng/searxng:latest
     ports:
-      - "8080:8080"
+      - "80:8080"
     volumes:
       - ./settings.yml:/etc/searxng/settings.yml:ro
       - ./limiter.toml:/etc/searxng/limiter.toml:ro
@@ -18,9 +18,4 @@ services:
       - FOWNER
       - SETGID
       - SETUID
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
     restart: unless-stopped
