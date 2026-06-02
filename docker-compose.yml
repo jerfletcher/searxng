@@ -2,15 +2,14 @@ version: "3"
 services:
   searxng:
     image: searxng/searxng:latest
-    container_name: searxng
     ports:
-      - "${SEARXNG_PORT:-8081}:8080"
+      - "8080:8080"
     volumes:
       - ./settings.yml:/etc/searxng/settings.yml:ro
       - ./limiter.toml:/etc/searxng/limiter.toml:ro
     environment:
-      - SEARXNG_BASE_URL=http://${SEARXNG_HOST:-0.0.0.0}:${SEARXNG_PORT:-8081}/
-      - SEARXNG_SECRET_KEY=${SEARXNG_SECRET_KEY:-a9fbec65e807c208590a49c52272722a89d41d5b13f35858bca310f1a83c6c19}
+      - SEARXNG_BASE_URL=https://search-lan.0mod.com/
+      - SEARXNG_SECRET_KEY=2954cf4dc746e602558b68577830efce6f721102dab1532bcec94feaa412caef
       - UVICORN_WORKERS=1
     cap_drop:
       - ALL
@@ -25,9 +24,3 @@ services:
         max-size: "10m"
         max-file: "3"
     restart: unless-stopped
-    networks:
-      - coolify
-
-networks:
-  coolify:
-    external: true
