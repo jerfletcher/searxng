@@ -1,10 +1,8 @@
 services:
   searxng:
     container_name: searxng
-    image: docker.io/searxng/searxng:latest
+    build: .
     restart: unless-stopped
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
-      - SEARXNG_SETTINGS_LIMITER_ENABLED=false
-      - SEARXNG_SECRET_KEY=***
-      - GRANIAN_WORKERS=2
+      - SEARXNG_SECRET_KEY=***      - GRANIAN_WORKERS=2
