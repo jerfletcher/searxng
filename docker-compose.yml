@@ -1,9 +1,10 @@
 services:
   searxng:
     container_name: searxng
-    build: .
+    image: docker.io/searxng/searxng:latest
     restart: unless-stopped
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
+      - SEARXNG_SETTINGS_LIMITER_ENABLED=false
+      - SEARXNG_SECRET_KEY=***
       - GRANIAN_WORKERS=2
-    entrypoint: ["/usr/local/bin/python", "-m", "searx.webapp"]
