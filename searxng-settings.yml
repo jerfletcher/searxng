@@ -1,6 +1,6 @@
 use_default_settings: true
 server:
-  secret_key: "2954cf...ef"
+  secret_key: "***"
   limiter: false
   storage:
     backend: null
