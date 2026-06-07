@@ -1,14 +1,10 @@
-# Updated with settings.yml mount
 services:
   searxng:
     container_name: searxng
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
-    volumes:
-      - ./searxng-settings.yml:/etc/searxng/settings.yml:ro
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
       - SEARXNG_SETTINGS_LIMITER_ENABLED=false
-      - SEARXNG_SERVER_LIMITER_ENABLED=false
-      - SEARXNG_SECRET_KEY=2954cf...ef
+      - SEARXNG_SECRET_KEY=***
       - GRANIAN_WORKERS=2
