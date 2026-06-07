@@ -1,1 +1,1 @@
-# SearXNG deployment
+# SearXNG
