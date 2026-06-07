@@ -5,4 +5,4 @@ services:
     restart: unless-stopped
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
-      - SEARXNG_SECRET_KEY=***      - GRANIAN_WORKERS=2
+      - GRANIAN_WORKERS=2
