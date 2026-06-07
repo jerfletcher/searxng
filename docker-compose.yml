@@ -6,3 +6,4 @@ services:
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
       - GRANIAN_WORKERS=2
+    entrypoint: ["/usr/local/bin/python", "-m", "searx.webapp"]
