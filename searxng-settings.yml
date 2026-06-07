@@ -2,12 +2,3 @@ use_default_settings: true
 server:
   secret_key: "***"
   limiter: false
-  storage:
-    backend: null
-search:
-  safe_search: 0
-  autocomplete: ""
-  default_lang: ""
-  formats:
-    - html
-    - json
