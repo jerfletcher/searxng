@@ -1,10 +1,10 @@
-version: "3"
 services:
   searxng:
-    image: searxng/searxng:latest
+    container_name: searxng
+    image: docker.io/searxng/searxng:latest
     restart: unless-stopped
     environment:
       - SEARXNG_BASE_URL=https://search-lan.0mod.com/
-      - SEARXNG_SECRET_KEY=2954cf4dc746e602558b68577830efce6f721102dab1532bcec94feaa412caef
-      - UVICORN_WORKERS=1
       - SEARXNG_SETTINGS_LIMITER_ENABLED=false
+      - SEARXNG_SECRET_KEY=-t4Nus...QGyo
+      - GRANIAN_WORKERS=2
