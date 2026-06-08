@@ -1,0 +1,7 @@
+use: defaults
+
+server:
+  secret_key: "searxng-limiter-disabled"
+  method: "POST"
+
+limiter: false
