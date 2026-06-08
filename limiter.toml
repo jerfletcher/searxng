@@ -1,0 +1,3 @@
+# Disable the limiter entirely
+[botdetection.ip_limit]
+enable = false
