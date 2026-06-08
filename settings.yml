@@ -1,7 +1,11 @@
-use: defaults
+use_default_settings: true
 
 server:
   secret_key: "searxng-limiter-disabled"
   method: "POST"
+  limiter: false
 
-limiter: false
+search:
+  formats:
+    - html
+    - json

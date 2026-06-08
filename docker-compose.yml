@@ -3,9 +3,9 @@ services:
     container_name: searxng
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro
     environment:
       - 'SEARXNG_BASE_URL=https://search-lan.0mod.com/'
-      - SEARXNG_SETTINGS_LIMITER__ENABLED=false
-      - SEARXNG_SETTINGS_LIMITER__RATELIMIT__ENABLED=false
-      - SEARXNG_SETTINGS_LIMITER__BOTDETECTION__ENABLED=false
+      - FORCE_OWNERSHIP=false
       - GRANIAN_WORKERS=2
