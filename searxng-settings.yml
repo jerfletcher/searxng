@@ -1,25 +1,4 @@
 use_default_settings: true
 
-server:
-  secret_key: "${SEARXNG_SECRET_KEY}"
-  limiter: false
-  port: 8080
-  bind_address: "0.0.0.0"
-  method: "POST"
-
-search:
-  safe_search: 0
-  autocomplete: "https://duckduckgo.com/ac/?q="
-  formats:
-    - html
-    - json
-
-ui:
-  default_theme: simple
-  default_locale: all
-  infinite_scroll: false
-
-outgoing:
-  request_timeout: 7.0
-  max_request_timeout: 35.0
-  verify_tls: true
+limiter:
+  enabled: false
