@@ -5,5 +5,7 @@ services:
     restart: unless-stopped
     environment:
       - 'SEARXNG_BASE_URL=https://search-lan.0mod.com/'
-      - SEARXNG_SETTINGS_LIMITER_ENABLED=false
+      - SEARXNG_SETTINGS_LIMITER__ENABLED=false
+      - SEARXNG_SETTINGS_LIMITER__RATELIMIT__ENABLED=false
+      - SEARXNG_SETTINGS_LIMITER__BOTDETECTION__ENABLED=false
       - GRANIAN_WORKERS=2
