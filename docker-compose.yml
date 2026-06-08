@@ -1,11 +1,10 @@
 services:
   searxng:
     container_name: searxng
-    image: docker.io/searxng/searxng:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
-    volumes:
-      - ./settings.yml:/etc/searxng/settings.yml:ro
     environment:
       - 'SEARXNG_BASE_URL=https://search-lan.0mod.com/'
-      - FORCE_OWNERSHIP=false
       - GRANIAN_WORKERS=2
